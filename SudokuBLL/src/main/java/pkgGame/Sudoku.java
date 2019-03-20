@@ -90,7 +90,9 @@ public class Sudoku extends LatinSquare {
 	public int[][] getPuzzle() {
 		return super.getLatinSquare();
 	}
-
+	public int getRegionNbr(int iCol, int iRow) {
+		return 0;
+	}
 	/**
 	 * getRegion - figure out what region you're in based on iCol and iRow and call
 	 * getRegion(int)<br>
