@@ -90,8 +90,10 @@ public class Sudoku extends LatinSquare {
 	public int[][] getPuzzle() {
 		return super.getLatinSquare();
 	}
+	
 	public int getRegionNbr(int iCol, int iRow) {
-		return 0;
+		int i = (iCol / iSqrtSize) + ((iRow / iSqrtSize) * iSqrtSize);
+		return i;
 	}
 	/**
 	 * getRegion - figure out what region you're in based on iCol and iRow and call
@@ -273,4 +275,17 @@ public class Sudoku extends LatinSquare {
 		
 		return true;
 	}
-}
+	public void PrintPuzzle() {
+		int rowSize = super.getLatinSquare().length;
+		int columnSize = super.getLatinSquare().length;
+		
+		for(int j = 0; j < columnSize; j++) {
+			for(int i = 0; i < columnSize; i++) {
+				System.out.print(super.getRow(rowSize)[i]);
+			}
+			System.out.print("\n");
+			
+			}
+		}
+	}
+
