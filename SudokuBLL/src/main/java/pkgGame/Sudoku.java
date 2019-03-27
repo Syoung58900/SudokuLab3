@@ -279,7 +279,7 @@ public class Sudoku extends LatinSquare {
 	private void FillDiagonalRegions() {
 		for (int i = 0; i < iSqrtSize; i += iSqrtSize) {
 			SetRegion((i / iSqrtSize) + i);
-			ShuffleRegion((i / iSqrtSize) + ((i / iSqrtSize) * iSqrtSize));
+			ShuffleRegion((i / iSqrtSize) + i);
 
 		}
 	}
