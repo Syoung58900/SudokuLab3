@@ -88,7 +88,7 @@ public class Sudoku extends LatinSquare {
 	public int[][] getPuzzle() {
 		return super.getLatinSquare();
 	}
-	
+
 	public int getRegionNbr(int iCol, int iRow) {
 		int i = (iCol / iSqrtSize) + ((iRow / iSqrtSize) * iSqrtSize);
 		return i;
@@ -267,21 +267,29 @@ public class Sudoku extends LatinSquare {
 	public void PrintPuzzle() {
 		int rowSize = super.getLatinSquare().length;
 		int columnSize = super.getLatinSquare().length;
-		
-		for(int j = 0; j < columnSize; j++) {
-			for(int i = 0; i < columnSize; i++) {
-				System.out.print( super.getRow(rowSize)[i]);
+
+		for (int j = 0; j < columnSize; j++) {
+			for (int i = 0; i < columnSize; i++) {
+				System.out.print(super.getRow(rowSize)[i]);
 			}
 			System.out.print("\n");
-			
-			}
-		}
-
-	private void FillDiagonalRegions() {
-		for (int i = 0; i < iSqrtSize; i++) {
 
 		}
 	}
 
-}
+	private void FillDiagonalRegions() {
+		for (int i = 0; i < iSqrtSize; i += iSqrtSize) {
+			SetRegion((i / iSqrtSize) + i);
+			ShuffleRegion((i / iSqrtSize) + ((i / iSqrtSize) * iSqrtSize));
+		}
+	}
 
+	private void SetRegion(int r) {
+
+	}
+
+	private void ShuffleRegion(int r) {
+
+	}
+
+}
