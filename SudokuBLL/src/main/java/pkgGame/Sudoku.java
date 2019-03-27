@@ -270,7 +270,7 @@ public class Sudoku extends LatinSquare {
 		
 		for(int j = 0; j < columnSize; j++) {
 			for(int i = 0; i < columnSize; i++) {
-				System.out.print( super.getRow(rowSize)[i]);
+				System.out.print( super.getRow(rowSize)[i] + " ");
 			}
 			System.out.print("\n");
 			
