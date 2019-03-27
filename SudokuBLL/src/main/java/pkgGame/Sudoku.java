@@ -281,6 +281,7 @@ public class Sudoku extends LatinSquare {
 		for (int i = 0; i < iSqrtSize; i += iSqrtSize) {
 			SetRegion((i / iSqrtSize) + i);
 			ShuffleRegion((i / iSqrtSize) + ((i / iSqrtSize) * iSqrtSize));
+
 		}
 	}
 
