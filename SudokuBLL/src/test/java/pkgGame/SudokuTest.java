@@ -258,5 +258,38 @@ public class SudokuTest {
 		assertTrue(Arrays.equals(Region5, s1.getRegion(5)));
 		
 	}
+	@Test
+	public void shuffleArrayTest1() throws Exception {
+
+		Sudoku sud = new Sudoku(4);
+
+		int[] arr = { 1, 2, 3, 4 };
+
+		System.out.println("\nshuffleArrayTest1:");
+		System.out.println("Initial array: \t\t" + Arrays.toString(arr));
+
+		sud.shuffleArray(arr);
+
+		System.out.println("Shuffled array: \t" + Arrays.toString(arr));
+
+	}
+	
+	@Test
+	public void shuffleRegionTest() throws Exception {
+		int[][] myArray = { { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 0, 0 } };
+
+		Sudoku s = new Sudoku(myArray);
+
+		System.out.println("shuffleRegion Test:");
+		System.out.println("Initial puzzle:");
+		s.setRegion(0);
+		s.PrintPuzzle();
+
+		System.out.println("\nFinal puzzle:");
+		s.ShuffleRegion(0);
+		s.PrintPuzzle();
+
+	}
+
 	
 }
