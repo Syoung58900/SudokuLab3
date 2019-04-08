@@ -311,5 +311,22 @@ public class Sudoku extends LatinSquare {
 		}
 
 	}
+	
+	public void shuffleArray(int[] ar) {
+		List<Integer> ls = new ArrayList<>();
+
+		// adds array elements to list
+		for (int i = 0; i < ar.length; i++) {
+			ls.add(ar[i]);
+		}
+
+		// shuffle list
+		Collections.shuffle(ls);
+
+		// replaces array elements with shuffled list elements
+		for (int i = 0; i < ar.length; i++) {
+			ar[i] = ls.get(i);
+		}
+	}
 
 }
