@@ -4,6 +4,12 @@ import static org.junit.Assert.*;
 
 import java.util.Arrays;
 
+import java.util.List;
+
+import java.util.ArrayList;
+
+import java.util.Collections;
+
 import org.junit.Test;
 
 public class SudokuTest {
@@ -258,6 +264,8 @@ public class SudokuTest {
 		assertTrue(Arrays.equals(Region5, s1.getRegion(5)));
 		
 	}
+	
+	/*
 	@Test
 	public void shuffleArrayTest1() throws Exception {
 
@@ -290,6 +298,7 @@ public class SudokuTest {
 		s.PrintPuzzle();
 
 	}
+	*/
 
 	
 }

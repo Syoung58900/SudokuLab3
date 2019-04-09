@@ -3,6 +3,9 @@ package pkgGame;
 import pkgEnum.ePuzzleViolation;
 import pkgHelper.LatinSquare;
 import pkgHelper.PuzzleViolation;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Sudoku - This class extends LatinSquare, adding methods, constructor to
@@ -278,15 +281,33 @@ public class Sudoku extends LatinSquare {
 
 	private void FillDiagonalRegions() {
 		for (int i = 0; i < iSqrtSize; i += iSqrtSize) {
-			SetRegion((i / iSqrtSize) + i);
+			setRegion((i / iSqrtSize) + i);
 			ShuffleRegion((i / iSqrtSize) + i);
 
 		}
 	}
 
-	private void SetRegion(int r) {
-
+	private void setRegion(int r) {
+		int[] example = new int[iSize];
+		
+		for (int i = 0 , count = 1 ; i< iSize ; i ++) {
+			example[i] = count;
+			count = count + 1;
+		}
+	
+		int[][] latinSquare = getPuzzle();
+		int start_h = (r % iSqrtSize)*iSqrtSize;
+		int start_l = (r % iSqrtSize)*iSqrtSize;
+		int count = 0;
+		
+		for (int i=0;i<iSqrtSize;i++) {
+			for(int k=0;k<iSqrtSize;k++) {
+				latinSquare[i+start_h][k+start_l] = example[count];
+				count = count + 1;
+				}
+		}
 	}
+	
 
 	private void ShuffleRegion(int r) {
 		int[] arr = getRegion(r);
@@ -311,21 +332,17 @@ public class Sudoku extends LatinSquare {
 		}
 
 	}
-	
-	public void shuffleArray(int[] ar) {
-		List<Integer> ls = new ArrayList<>();
 
-		// adds array elements to list
+	private void shuffleArray(int[] ar) {
+		ArrayList<Integer> array = new ArrayList<Integer>();
+
 		for (int i = 0; i < ar.length; i++) {
-			ls.add(ar[i]);
+			array.add(ar[i]);
 		}
 
-		// shuffle list
-		Collections.shuffle(ls);
-
-		// replaces array elements with shuffled list elements
+		Collections.shuffle(array);
 		for (int i = 0; i < ar.length; i++) {
-			ar[i] = ls.get(i);
+			ar[i] = (int) array.get(i);
 		}
 	}
 
